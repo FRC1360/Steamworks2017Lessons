@@ -6,6 +6,11 @@ public class DriveSubsystem {
 		RobotOutput.mtrRightDrive.set(right);
 	}
 	
+	public static void arcadeDrive(double throttle, double turn) {
+		RobotOutput.mtrLeftDrive.set(throttle + turn);
+		RobotOutput.mtrRightDrive.set(throttle - turn);
+	}
+	
 	public static void handleDriveTeleop() {
 		tankDrive(HumanInput.getLeftThrottle(), HumanInput.getRightThrottle());
 	}
